@@ -1,0 +1,9 @@
+@media(max-width: 600px){
+  .aboutContent{
+    display: inline-block;
+  }
+
+  .bicycleContent{
+    display: inline-block;
+  }
+}
