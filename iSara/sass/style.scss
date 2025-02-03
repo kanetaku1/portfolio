@@ -274,6 +274,21 @@ main {
 
 .what {
   background-color: #FEF5E0;
+  position: relative;
+  .circle {
+    position: absolute;
+    left: 50%;
+    top: -2.2em;
+    color: white;
+    background-color: #ebb94d;
+    p {
+      font-size: 0.9em;
+      color: #fff;
+      position: absolute;
+      top: 1.5em;
+      left: 0.9em;
+    }
+  }
   .container {
     text-align: center;
     display: flex;
@@ -501,6 +516,20 @@ main {
 .Question {
   background-color: #ebb94d;
   color: white;
+  position: relative;
+  padding-top: 120px;
+  .circle {
+    position: absolute;
+    top: 3em;
+    left: 50%;
+    background-color: #fff;
+    p {
+      color: #ebb94d;
+      position: absolute;
+      left: 1.3em;
+      top: 2em;
+    }
+  }
   .section_title{
     &::before,
     &::after {
@@ -510,6 +539,20 @@ main {
 }
 
 .Answer {
+  position: relative;
+  .triangle {
+    position: absolute;
+    background-color: #ebb94d;
+    height: 1.5em;
+    width: 3em;
+    top: 0em;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .triangle-bottom {
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    color: black;
+  }
   .container{
     display: flex;
     flex-direction: column;
@@ -602,4 +645,12 @@ main {
 
 footer {
   background-color: #ccc;
+}
+
+.circle {
+  display: inline-block;
+  padding: 38px 40px;
+  border-radius: 50%;
+  transform: translate(-50%, 0);
+  justify-content: center;
 }
