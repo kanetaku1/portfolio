@@ -3,82 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to use the Gifu Kosen Gym</title>
-  <link rel="stylesheet" href="sass/style.css" />
+  <title>Campus Training Rooms - Guide</title>
+  <link rel="stylesheet" href="scss/style.css">
 </head>
 <body>
-  <header>
-    <nav>
+  <header class="header">
+    <h1>Gifu Kosen Training Facilities</h1>
+    <nav class="main-nav">
       <ul>
-        <li><a href="#introduce">施設紹介</a></li>
-        <li><a href="#rules">使用ルール</a></li>
-        <li><a href="#gallery">ギャラリー</a></li>
-        <li><a href="english.html">English</a></li>
+        <li><a href="#locations">Locations</a></li>
+        <li><a href="#rules">Usage Rules</a></li>
+        <li><a href="#gallery">Equipment Gallery</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section id="introduce">
-      <h1>施設紹介</h1>
-      <p>筋力トレーニング器具がある施設を紹介します</p>
-      <div class="entrance">
-        <div class="facility-image">
-          <img src="../gym/public/img/gym.JPG" alt="体育館">
-          <div>
-            <p>体育館二階の筋力トレーニングエリアです。筋肉の部位ごとに最適な器具が設置されています。</p>
-            <strong><<器具名>></strong>
-            <ul>
-              <li>ベンチプレス</li>
-              <li>レッグプレス</li>
-              <li>チェストプレス</li>
-              <li>ラットプルダウン</li>
-            </ul>
-          </div>
+  <main class="container">
+    <section id="locations" class="facility-section">
+      <h2>Training Room Locations</h2>
+      
+      <article class="facility">
+        <figure class="facility-image">
+          <img src="public/img/gym.JPG" alt="Gymnasium 2nd Floor Training Area">
+          <figcaption>Gymnasium 2nd Floor</figcaption>
+        </figure>
+        <div class="facility-info">
+          <h3>Machines Training Area</h3>
+          <p>Located on the 2nd floor of the Gymnasium. Equipped with:</p>
+          <ul>
+            <li>Weight machines</li>
+            <li>Treadmills</li>
+            <li>Stationary bikes</li>
+            <li>Stretching area</li>
+          </ul>
         </div>
-        <div class="facility-image">
-          <img src="../gym/public/img/andokinekan.JPG" alt="体育館">
-          <div>
-            <p>安藤記念館の筋力トレーニングエリアです。ダンベルを用いた本格的なトレーニングができます。</p>
-            <strong><<器具名>></strong>
-            <ul>
-              <li>ダンベル</li>
-              <li>バーベル</li>
-              <li>スミスマシン</li>
-              <li>プレートロード</li>
-            </ul>
-          </div>
+      </article>
+
+      <article class="facility">
+        <figure class="facility-image">
+          <img src="public/img/andokinekan.JPG" alt="Ando Memorial Hall Training Room">
+          <figcaption>Ando Memorial Hall</figcaption>
+        </figure>
+        <div class="facility-info">
+          <h3>Free Weights Zone</h3>
+          <p>Advanced training area featuring:</p>
+          <ul>
+            <li>Dumbbells (2kg - 50kg)</li>
+            <li>Barbells and weight plates</li>
+            <li>Power racks</li>
+            <li>Kettlebells</li>
+          </ul>
         </div>
+      </article>
+    </section>
+
+    <section id="rules" class="rules-section">
+      <h2>Usage Rules</h2>
+      <div class="rules-grid">
+        <ol class="rules-list">
+          <li>Always wear <a href="/gym/public/img/shoes.JPG">indoor sports shoes</a></li>
+          <li>Re-rack weights after use</li>
+          <li>Wipe down equipment after use</li>
+          <li>Available from 7:00 am to 7:00 pm on weekdays</li>
+          <li>No food or open containers</li>
+          <li>Learn how to use unfamiliar equipment before use</li>
+        </ol>
+        <p class="notice">*Please be mindful of others and maintain proper gym etiquette</p>
       </div>
     </section>
 
-    <section id="rules">
-      <h2>使用ルール</h2>
-      <p>利用者同士が気持ちよくトレーニングできるよう、以下のルールを守りましょう。</p>
-      <h3>共通ルール</h3>
-      <ul>
-        <li>施設内へは靴を脱いで入りましょう。</li>
-        <li>使用前後に器具を清掃してください。</li>
-        <li><a href="#shoes">運動靴</a>を着用してください。</li>
-        <li>飲食は禁止です（水分補給はOK）。</li>
-        <li>他の利用者に迷惑をかけないよう心がけましょう。</li>
-      </ul>
-      <h3>安藤記念館の場合</h3>
-      <img src="../gym/public/img/explain_dumbbell.JPG" alt="">
-      <h3>体育館の場合</h3>
-      <img src="../gym/public/img/explain_gym.JPG" alt="">
-    </section>
+  <section id="gallery" class="gallery-section">
+    <h2>Equipment Gallery</h2>
+    
+    <div class="gallery-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="gym">Gymnasium 2F</button>
+      <button class="filter-btn" data-filter="ando">Ando Memorial</button>
+    </div>
 
-    <section id="gallery">
-      <div id="shoes">
-        <img src="../gym/public/img/shoes.JPG" alt="運動靴">
-        <p>運動靴は、運動時に足をしっかりと支え、安定した動きをサポートしてくれます。運動靴を履くことで、怪我のリスクを減らすことができます。</p>
+    <div class="gallery-scroller">
+      <div class="equipment-grid" data-category="gym">
+        <div class="equipment-item">
+          <img src="public/img/gym2.JPG" alt="Leg Press Machine">
+          <div class="equipment-info">
+            <h3>Leg Press Machine</h3>
+            <p class="facility-tag">Gymnasium 2F</p>
+            <p>Usage: Adjust seat position, place feet shoulder-width</p>
+          </div>
+        </div>
+        <!-- 他の体育館設備 -->
+        <div class="equipment-item">
+          <img src="public/img/gym2.JPG" alt="Leg Press Machine">
+          <div class="equipment-info">
+            <h3>Leg Press Machine</h3>
+            <p class="facility-tag">Gymnasium 2F</p>
+            <p>Usage: Adjust seat position, place feet shoulder-width</p>
+          </div>
+        </div>
+        <div class="equipment-item">
+          <img src="public/img/gym2.JPG" alt="Leg Press Machine">
+          <div class="equipment-info">
+            <h3>Leg Press Machine</h3>
+            <p class="facility-tag">Gymnasium 2F</p>
+            <p>Usage: Adjust seat position, place feet shoulder-width</p>
+          </div>
+        </div>
+        <div class="equipment-item">
+          <img src="public/img/gym2.JPG" alt="Leg Press Machine">
+          <div class="equipment-info">
+            <h3>Leg Press Machine</h3>
+            <p class="facility-tag">Gymnasium 2F</p>
+            <p>Usage: Adjust seat position, place feet shoulder-width</p>
+          </div>
+        </div>
       </div>
-    </section>
+
+      <div class="equipment-grid" data-category="ando">
+        <div class="equipment-item">
+          <img src="public/img/benchpress.JPG" alt="Olympic Barbell">
+          <div class="equipment-info">
+            <h3>Olympic Barbell</h3>
+            <p class="facility-tag">Ando Memorial</p>
+            <p>Usage: Always use collars to secure weights</p>
+          </div>
+        </div>
+        <!-- 他の安藤記念館設備 -->
+        <div class="equipment-item">
+          <img src="public/img/dumbbell.JPG" alt="Olympic Barbell">
+          <div class="equipment-info">
+            <h3>Olympic Barbell</h3>
+            <p class="facility-tag">Ando Memorial</p>
+            <p>Usage: Always use collars to secure weights</p>
+          </div>
+        </div>
+        <div class="equipment-item">
+          <img src="public/img/dumbbell2.JPG" alt="Olympic Barbell">
+          <div class="equipment-info">
+            <h3>Olympic Barbell</h3>
+            <p class="facility-tag">Ando Memorial</p>
+            <p>Usage: Always use collars to secure weights</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 体育館管理</p>
+  <footer class="footer">
+    <p>&copy; 2025 Gifu Kosen Sports Facilities</p>
+    <!-- <address>Contact: sports-facility@univ.ac.jp</address> -->
   </footer>
+
+  <script type="text/javascript" src="javascript/style.js"></script>	
 </body>
 </html>
