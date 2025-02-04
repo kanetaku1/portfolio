@@ -24,6 +24,9 @@ h2 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -52,7 +55,7 @@ h2 {
     }
   }
   img {
-    height: 32px;
+    height: 3em;
     @include responsive(sm) {
       height: 24px;
     }
@@ -60,6 +63,7 @@ h2 {
   p {
     font-size: 14px;
     font-weight: 600;
+    padding-bottom: 0.4em;
     @include responsive(lg) {
       font-size: 12px;
     }
@@ -136,10 +140,38 @@ main {
   }
 }
 
+.blank {
+  background-color: #fff;
+  padding: 2em;
+  width: 100%;
+}
+
+.pagetop {
+  height: 4em;
+  width: 4em;
+  position: fixed;
+  right: 4em;
+  bottom: 4em;
+  background: #fff;
+  border: solid 2px #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  &_arrow {
+    height: 1em;
+    width: 1em;
+    border-top: 3px solid #000;
+    border-right: 3px solid #000;
+    transform: translateY(20%) rotate(-45deg);
+  }
+}
+
+
 .mainvisual {
-  background-image: url(../public/img/main.jpg);
+  background: url(../public/img/main.jpg) no-repeat center center;
   background-size: cover;
-  background-position: center center;
   padding: 100px 0;
   @include responsive(sm) {
     padding: 40px 0;
@@ -163,7 +195,7 @@ main {
     }
   }
   img {
-    height: 80px;
+    height: 7em;
     margin: 24px 0 48px;
   }
   &_name {
@@ -184,10 +216,8 @@ main {
   color: #fff;
   background-color: var(--color_seccondary);
   .container {
-    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
   &_copy {
     font-size: 20px;
@@ -233,9 +263,9 @@ main {
     &_facebook {
       padding: 5px 10px;
       background-color: #1877f2;
-      color: #ccc;
+      color: #fff;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: bold;
       border-radius: 50px;
     }
   }
@@ -554,8 +584,6 @@ main {
     top: -0.1em;
     left: 50%;
     transform: translate(-50%, 0);
-  }
-  .triangle-bottom {
     clip-path: polygon(0 0, 50% 100%, 100% 0);
     color: black;
   }
@@ -627,24 +655,24 @@ main {
         width: 100%;
         height: 100%;
         margin: 15px;
-        .list_title{
-          font-size: 20px;
-          padding: 12px 0;
-        }
-        .list_content{
-          color: black;
-          background-color: white;
-          margin: 0 0.1em;
-          border-bottom: 1px dotted #ebebeb;
-        }
-        .list_first{
-          padding-top: 10px;
-        }
-        .list_last{
-          margin-bottom: 0.1em;
-          border-radius: 0 0 4px 4px;
-        }
       }
+    }
+    &_title{
+      font-size: 20px;
+      padding: 12px 0;
+    }
+    &_content{
+      color: black;
+      background-color: white;
+      margin: 0 0.1em;
+      border-bottom: 1px dotted #ebebeb;
+    }
+    &_first{
+      padding-top: 10px;
+    }
+    &_last{
+      margin-bottom: 0.1em;
+      border-radius: 0 0 4px 4px;
     }
   }
 }
@@ -652,11 +680,28 @@ main {
 .flow {
   .container {
     text-align: center;
-    .flow_img {
+    &_img {
       margin: 4em auto 3em;
     }
-    .flow_connection {
+    &_connection {
       padding-top: 0.2em;
+    }
+    &_step {
+      margin-left: 1em;
+      align-self: flex-end;
+    }
+    &_title {
+      font-weight: bold;
+      font-size: large;
+      width: 9em;
+    }
+    &_sentence{
+      text-align: left;;
+      font-size: 0.9em;
+      letter-spacing: 0.05em;
+      p {
+        padding: 0.5em 0;
+      }
     }
     li {
       background-color: #fef5e0;
@@ -668,23 +713,6 @@ main {
       gap: 2em;
       img {
         padding-bottom: 1em;
-      }
-      .flow_step {
-        margin-left: 1em;
-        align-self: flex-end;
-        .flow_title {
-          font-weight: bold;
-          font-size: large;
-          width: 9em;
-        }
-      }
-      .flow_sentence{
-        text-align: left;;
-        font-size: 0.9em;
-        letter-spacing: 0.05em;
-        p {
-          padding: 0.5em 0;
-        }
       }
     }
   }
@@ -709,14 +737,14 @@ main {
     p {
       padding: 0.5em 0;
     }
-    .answer {
+    &_answer {
       font-size: 1.5em;
       font-weight: bold;
     }
   }
 }
 
-.prise {
+.prize {
   background-color: #f7c23c;
   .container {
     letter-spacing: 0.1em;
@@ -726,7 +754,7 @@ main {
     h2 {
       padding: 1em 0 1.5em;
     }
-    .prises {
+    &_square {
       position: relative;
       padding-top: 5em;
       h3 {
@@ -745,32 +773,32 @@ main {
         border: 2px solid #fff;
         gap: 8em;
         padding: 3em;
-        .prise_circle {
-          background-color: #fff;
-          height: 15em;
-          width: 15em;
-          border-radius: 50%;
-          position: relative;
-          .prise_num {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            left: 50%;
-            top: 30%;
-            color: #ebb94d;
-            font-size: 1.5em;
-            font-weight: normal;
-          }
-          .prise_content {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            left: 50%;
-            top: 60%;
-            width: 85%;
-            font-size: 0.9em;
-            letter-spacing: 0em;
-          }
-        }
       }
+    }
+    &_circle {
+      background-color: #fff;
+      height: 15em;
+      width: 15em;
+      border-radius: 50%;
+      position: relative;
+    }
+    &_num {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 30%;
+      color: #ebb94d;
+      font-size: 1.5em;
+      font-weight: normal;
+    }
+    &_content {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 60%;
+      width: 85%;
+      font-size: 0.9em;
+      letter-spacing: 0em;
     }
   }
 }
@@ -811,25 +839,25 @@ main {
       font-size: 1.3em;
       letter-spacing: 0.1em;
     }
-    .message_container {
+    &_spread {
       display: flex;
       gap: 2em;
       letter-spacing: 0.1em;
       img {
         height: 9em;
       }
-      .message_content {
-        text-align: left;
+    }
+    &_content {
+      text-align: left;
+      p {
+        font-size: 0.9em;
+        line-height: 1.3em;
+        padding-top: 0.5em;
+      }
+      .block {
+        padding: 1.5em 0;
         p {
-          font-size: 0.9em;
-          line-height: 1.3em;
-          padding-top: 0.5em;
-        }
-        .block {
-          padding: 1.5em 0;
-          p {
-            padding: 0;
-          }
+          padding: 0;
         }
       }
     }
@@ -851,8 +879,85 @@ main {
   }
 }
 
+.common_question {
+  .container {
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    padding-bottom: 3em;
+    h2 {
+      padding: 1em 0;
+    }
+    details {
+      text-align: left;
+      border-bottom: 1px solid #ebebeb;
+      summary {
+        position: relative;
+        list-style: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        padding: 1em;
+        border: 1px solid #ebebeb;
+        margin:0.2em auto 0;
+        &::after {
+          display: block;
+          content: "";
+          position: absolute;
+          border-top: solid 6px #ebebeb;
+          border-left: solid 6px #ebebeb;
+          width: 0.5em;
+          height: 0.5em;
+          transform: rotate(225deg);
+          top: 1em;
+          right: 1em;
+        }
+        &:hover{ 
+          p {
+            text-decoration: underline;
+          }
+        }
+        p {
+          display: inline-block;
+        }
+      }
+      &[open]{
+        summary::after{
+          transform: rotate(45deg);
+        }
+        .container_answer {
+          max-height: 5em;
+          padding: 1.5em 1.5em 2em;
+        }
+      }
+    }
+    &_answer{
+      padding: 0em;
+      max-height: 0em;
+      transition: max-height .5s, padding .5s;
+    }
+  }
+}
+ 
 footer {
-  background-color: #ccc;
+  background-color: #ebebeb;
+  padding: 2em;
+  .container{
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0.1em;
+    p {
+      font-size: 0.6em;
+    }
+    a {
+      color: blue;
+    }
+    .cta_sns {
+      padding: 0 0 2em;
+      &_facebook{
+        color: #FFF;
+      }
+    }
+  }
 }
 
 .circle {

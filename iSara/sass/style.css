@@ -116,6 +116,9 @@ h2 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -151,7 +154,7 @@ h2 {
   }
 }
 .header img {
-  height: 32px;
+  height: 3em;
 }
 @media screen and (max-width: 768px) {
   .header img {
@@ -161,6 +164,7 @@ h2 {
 .header p {
   font-size: 14px;
   font-weight: 600;
+  padding-bottom: 0.4em;
 }
 @media screen and (max-width: 1200px) {
   .header p {
@@ -244,10 +248,37 @@ main > section {
   inset: auto 0 0 auto;
 }
 
+.blank {
+  background-color: #fff;
+  padding: 2em;
+  width: 100%;
+}
+
+.pagetop {
+  height: 4em;
+  width: 4em;
+  position: fixed;
+  right: 4em;
+  bottom: 4em;
+  background: #fff;
+  border: solid 2px #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.pagetop_arrow {
+  height: 1em;
+  width: 1em;
+  border-top: 3px solid #000;
+  border-right: 3px solid #000;
+  transform: translateY(20%) rotate(-45deg);
+}
+
 .mainvisual {
-  background-image: url(../public/img/main.jpg);
+  background: url(../public/img/main.jpg) no-repeat center center;
   background-size: cover;
-  background-position: center center;
   padding: 100px 0;
 }
 @media screen and (max-width: 768px) {
@@ -278,7 +309,7 @@ main > section {
   }
 }
 .mainvisual img {
-  height: 80px;
+  height: 7em;
   margin: 24px 0 48px;
 }
 .mainvisual_name {
@@ -302,10 +333,8 @@ main > section {
   background-color: var(--color_seccondary);
 }
 .cta .container {
-  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .cta_copy {
   font-size: 20px;
@@ -354,9 +383,9 @@ main > section {
 .cta_sns_facebook {
   padding: 5px 10px;
   background-color: #1877f2;
-  color: #ccc;
+  color: #fff;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: bold;
   border-radius: 50px;
 }
 
@@ -671,8 +700,6 @@ main > section {
   top: -0.1em;
   left: 50%;
   transform: translate(-50%, 0);
-}
-.Answer .triangle-bottom {
   -webkit-clip-path: polygon(0 0, 50% 100%, 100% 0);
           clip-path: polygon(0 0, 50% 100%, 100% 0);
   color: black;
@@ -748,20 +775,20 @@ main > section {
   height: 100%;
   margin: 15px;
 }
-.content .container ul li .list_title {
+.content .container_title {
   font-size: 20px;
   padding: 12px 0;
 }
-.content .container ul li .list_content {
+.content .container_content {
   color: black;
   background-color: white;
   margin: 0 0.1em;
   border-bottom: 1px dotted #ebebeb;
 }
-.content .container ul li .list_first {
+.content .container_first {
   padding-top: 10px;
 }
-.content .container ul li .list_last {
+.content .container_last {
   margin-bottom: 0.1em;
   border-radius: 0 0 4px 4px;
 }
@@ -769,11 +796,28 @@ main > section {
 .flow .container {
   text-align: center;
 }
-.flow .container .flow_img {
+.flow .container_img {
   margin: 4em auto 3em;
 }
-.flow .container .flow_connection {
+.flow .container_connection {
   padding-top: 0.2em;
+}
+.flow .container_step {
+  margin-left: 1em;
+  align-self: flex-end;
+}
+.flow .container_title {
+  font-weight: bold;
+  font-size: large;
+  width: 9em;
+}
+.flow .container_sentence {
+  text-align: left;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+}
+.flow .container_sentence p {
+  padding: 0.5em 0;
 }
 .flow .container li {
   background-color: #fef5e0;
@@ -786,23 +830,6 @@ main > section {
 }
 .flow .container li img {
   padding-bottom: 1em;
-}
-.flow .container li .flow_step {
-  margin-left: 1em;
-  align-self: flex-end;
-}
-.flow .container li .flow_step .flow_title {
-  font-weight: bold;
-  font-size: large;
-  width: 9em;
-}
-.flow .container li .flow_sentence {
-  text-align: left;
-  font-size: 0.9em;
-  letter-spacing: 0.05em;
-}
-.flow .container li .flow_sentence p {
-  padding: 0.5em 0;
 }
 
 .why_bangkok {
@@ -826,28 +853,28 @@ main > section {
 .why_bangkok .container p {
   padding: 0.5em 0;
 }
-.why_bangkok .container .answer {
+.why_bangkok .container_answer {
   font-size: 1.5em;
   font-weight: bold;
 }
 
-.prise {
+.prize {
   background-color: #f7c23c;
 }
-.prise .container {
+.prize .container {
   letter-spacing: 0.1em;
   line-height: 1.4em;
   text-align: center;
   font-weight: bold;
 }
-.prise .container h2 {
+.prize .container h2 {
   padding: 1em 0 1.5em;
 }
-.prise .container .prises {
+.prize .container_square {
   position: relative;
   padding-top: 5em;
 }
-.prise .container .prises h3 {
+.prize .container_square h3 {
   font-size: 1.6em;
   position: absolute;
   left: 50%;
@@ -857,21 +884,21 @@ main > section {
   white-space: nowrap;
   padding: 0 0.8em;
 }
-.prise .container .prises ul {
+.prize .container_square ul {
   display: flex;
   justify-content: center;
   border: 2px solid #fff;
   gap: 8em;
   padding: 3em;
 }
-.prise .container .prises ul .prise_circle {
+.prize .container_circle {
   background-color: #fff;
   height: 15em;
   width: 15em;
   border-radius: 50%;
   position: relative;
 }
-.prise .container .prises ul .prise_circle .prise_num {
+.prize .container_num {
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
@@ -880,7 +907,7 @@ main > section {
   font-size: 1.5em;
   font-weight: normal;
 }
-.prise .container .prises ul .prise_circle .prise_content {
+.prize .container_content {
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
@@ -925,26 +952,26 @@ main > section {
   font-size: 1.3em;
   letter-spacing: 0.1em;
 }
-.message .container .message_container {
+.message .container_spread {
   display: flex;
   gap: 2em;
   letter-spacing: 0.1em;
 }
-.message .container .message_container img {
+.message .container_spread img {
   height: 9em;
 }
-.message .container .message_container .message_content {
+.message .container_content {
   text-align: left;
 }
-.message .container .message_container .message_content p {
+.message .container_content p {
   font-size: 0.9em;
   line-height: 1.3em;
   padding-top: 0.5em;
 }
-.message .container .message_container .message_content .block {
+.message .container_content .block {
   padding: 1.5em 0;
 }
-.message .container .message_container .message_content .block p {
+.message .container_content .block p {
   padding: 0;
 }
 
@@ -963,8 +990,79 @@ main > section {
   margin-top: 1em;
 }
 
+.common_question .container {
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding-bottom: 3em;
+}
+.common_question .container h2 {
+  padding: 1em 0;
+}
+.common_question .container details {
+  text-align: left;
+  border-bottom: 1px solid #ebebeb;
+}
+.common_question .container details summary {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 1em;
+  border: 1px solid #ebebeb;
+  margin: 0.2em auto 0;
+}
+.common_question .container details summary::after {
+  display: block;
+  content: "";
+  position: absolute;
+  border-top: solid 6px #ebebeb;
+  border-left: solid 6px #ebebeb;
+  width: 0.5em;
+  height: 0.5em;
+  transform: rotate(225deg);
+  top: 1em;
+  right: 1em;
+}
+.common_question .container details summary:hover p {
+  text-decoration: underline;
+}
+.common_question .container details summary p {
+  display: inline-block;
+}
+.common_question .container details[open] summary::after {
+  transform: rotate(45deg);
+}
+.common_question .container details[open] .container_answer {
+  max-height: 5em;
+  padding: 1.5em 1.5em 2em;
+}
+.common_question .container_answer {
+  padding: 0em;
+  max-height: 0em;
+  transition: max-height 0.5s, padding 0.5s;
+}
+
 footer {
-  background-color: #ccc;
+  background-color: #ebebeb;
+  padding: 2em;
+}
+footer .container {
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.1em;
+}
+footer .container p {
+  font-size: 0.6em;
+}
+footer .container a {
+  color: blue;
+}
+footer .container .cta_sns {
+  padding: 0 0 2em;
+}
+footer .container .cta_sns_facebook {
+  color: #FFF;
 }
 
 .circle {
