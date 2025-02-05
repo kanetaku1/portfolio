@@ -176,6 +176,7 @@ body {
 }
 .gallery-section .gallery-scroller {
   overflow-x: auto;
+  scroll-behavior: smooth;
   padding-bottom: 1rem;
 }
 .gallery-section .gallery-scroller::-webkit-scrollbar {
