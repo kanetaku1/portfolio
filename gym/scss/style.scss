@@ -103,6 +103,10 @@ body {
       margin-top: 0;
       font-size: 1.2em;
     }
+    ul {
+      padding-left: 1em;
+      list-style: disc;
+    }
   }
 }
 
@@ -129,7 +133,7 @@ body {
 
 // 追加・変更するSCSS
 .gallery-section {
-  overflow: hidden;
+  // overflow: hidden;
   
   .gallery-filter {
     text-align: center;
@@ -176,16 +180,18 @@ body {
   }
   
   .equipment-grid {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 2rem;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
     min-width: 100%;
     
     &[data-category] {
       display: none;
       
       &.active {
-        display: inline-flex;
+        display: grid;
       }
     }
   }
@@ -219,7 +225,7 @@ body {
       
       h3 {
         margin: 0 0 0.5rem;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         color: $primary-color;
       }
       

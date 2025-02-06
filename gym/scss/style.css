@@ -134,6 +134,10 @@ body {
   margin-top: 0;
   font-size: 1.2em;
 }
+.facility-section .facility-info ul {
+  padding-left: 1em;
+  list-style: disc;
+}
 
 .rules-section .rules-grid {
   background-color: #ecf0f1;
@@ -149,9 +153,6 @@ body {
   color: #5e7980;
 }
 
-.gallery-section {
-  overflow: hidden;
-}
 .gallery-section .gallery-filter {
   text-align: center;
   margin: 2rem 0;
@@ -190,16 +191,18 @@ body {
   border-radius: 4px;
 }
 .gallery-section .equipment-grid {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   gap: 2rem;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   min-width: 100%;
 }
 .gallery-section .equipment-grid[data-category] {
   display: none;
 }
 .gallery-section .equipment-grid[data-category].active {
-  display: inline-flex;
+  display: grid;
 }
 .gallery-section .equipment-item {
   flex: 0 0 300px;
@@ -229,7 +232,7 @@ body {
 }
 .gallery-section .equipment-item .equipment-info h3 {
   margin: 0 0 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #2c5038;
 }
 .gallery-section .equipment-item .equipment-info p {
