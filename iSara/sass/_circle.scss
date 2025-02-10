@@ -1,0 +1,26 @@
+.circle {
+  display: inline-block;
+  padding: 4rem;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 0rem;
+  p {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 1.4rem;
+    top: 4rem;
+    left: 4rem;
+  }
+  &-about {
+    @extend .circle;
+    color: white;
+    background-color: #ebb94d;
+  }
+  &-question {
+    @extend .circle;
+    color: #ebb94d;
+    background-color: white;
+  }
+}

@@ -1,17 +1,19 @@
+@use "responsive" as *;
+
 .section_title {
   position: relative;
   line-height: 1.5em;
   width: 100%;
   max-width: calc(var(--max-width) - 30%);
-  padding: 4rem;
-  margin-bottom: 2em;
+  padding: 3.6rem 0 2.8rem;
+  margin-bottom: 3.6rem;
   &::before,
   &::after {
     position: absolute;
     content: "";
     display: block;
-    width: 5rem;
-    height: 5rem;
+    width: 4.8rem;
+    height: 4.8rem;
     top: 0;
     left: 0;
   }
