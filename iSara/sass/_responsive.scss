@@ -6,7 +6,7 @@
   @if($size == sm){
     $with: 768px;
   }
-  @media screen and (max-width: $with){
+  @media (max-width: $with){
     @content;
   }
 } 
