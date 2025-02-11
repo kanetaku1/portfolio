@@ -1,33 +1,22 @@
 @use "responsive" as *;
 
 .button {
-  font-size: 14px;
-  color:#fff;
-  letter-spacing: 0.08em;
+  color:white;
   background-color: #da6b64;
-  padding: 1em 1.5em;
   display: inline-block;
   border-radius: 100px;
-  @include responsive(lg){
-    font-size: 13px;
+  &-lg {
+    @extend .button;
+    padding: 1.25em 1.5em;
   }
   &-md {
     @extend .button;
-    font-size: 20px;
-    font-weight: 600;
   }
-  &-lg {
+  &-sm {
     @extend .button;
-    font-size: 28px;
-    padding: 1.25em 1.5em;
-    @include responsive(lg) {
-      font-size: 20px;
-    }
-    br {
-      display: none;
-      @include responsive(sm){
-        display: block;
-      }
+    padding: 1.4rem 4rem;
+    @include responsive(sm) {
+      padding: 1em 1.5em;
     }
   }
 }

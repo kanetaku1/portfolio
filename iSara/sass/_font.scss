@@ -1,0 +1,132 @@
+@use "responsive" as *;
+
+.p-text {
+  font-weight: 600;
+  &__lv1 {
+    line-height: 4rem;
+    font-size: 2.8rem;
+    @include responsive(lg) {
+      font-size: 2.4rem;
+    }
+    @include responsive(sm) {
+      font-size: 1.8rem;
+    }
+  }
+  &__lv2 {
+    font-size: 2rem;
+    line-height: 2.9rem;
+    @include responsive(lg) {
+      font-size: 1.6rem;
+    }
+    @include responsive(sm) {
+      font-size: 1.5rem;
+    }
+  }
+  &__lv3 {
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+    @include responsive(lg) {
+      font-size: 1.4rem;
+    }
+    @include responsive(sm) {
+      font-size: 1.2rem;
+    }
+  }
+  &__lv4 {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    @include responsive(sm) {
+      font-size: 1.2rem;
+    }
+    @if(font-weight == 300) {
+      @include responsive(lg) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  &__header {
+    font-size: 1.4rem;
+    @include responsive(lg) {
+      font-size: 1.2rem;
+    }
+    @include responsive(sm) {
+      font-size: 1rem;
+    }
+  }
+  &__anotation {
+    font-family: "Consolas";
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 2.6rem;
+    @include responsive(lg) {
+      font-size: 1.4rem;
+    }
+  }
+  &__history {
+    font-size: 2.1rem;
+    @include responsive(lg) {
+      font-size: 1.8rem;
+    }
+    @include responsive(sm) {
+      font-size: 1.5rem;
+    }
+  }
+  &__skill {
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    font-weight: 300;
+    @include responsive(sm) {
+      font-size: 1rem;
+    }
+  }
+  &__merit {
+    font-size: 2rem;
+    font-weight: 700;
+    @include responsive(lg) {
+      font-size: 1.6rem;
+    }
+    @include responsive(sm) {
+      font-size: 1.5rem;
+    }
+  }
+  &__circle {
+    font-size: 1.4rem;
+    font-weight: 400;
+    &__qanda {
+      @extend .p-text__circle;
+      @include responsive(lg) {
+        font-size: 2rem;
+      }
+    }
+    @include responsive(sm) {
+      font-size: 1.2rem;
+    }
+  }
+  &__italic {
+    font-weight: 400;
+    font-style: italic;
+    &__lg {
+      @extend .p-text__italic;
+      font-size: 1.8rem;
+      line-height: 2.6rem
+    }
+    &__sm {
+      @extend .p-text__italic;
+      font-size: 1.5rem;
+    }
+  }
+  &__flow {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 2.6rem;
+    @include responsive(sm) {
+      font-size: 1.5rem;
+    }
+  }
+  &__stick-md {
+    font-size: 2.4rem;
+  }
+  &__thin {
+    font-weight: 300;
+  }
+}

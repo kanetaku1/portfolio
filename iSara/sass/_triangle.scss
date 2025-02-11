@@ -1,0 +1,10 @@
+.triangle {
+  position: absolute;
+  background-color: #ebb94d;
+  height: 2.4rem;
+  width: 4.8rem;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
