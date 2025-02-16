@@ -578,6 +578,12 @@ main {
     justify-content: space-between;
     border: 2px solid white;
     padding: 4.8rem 8% 5.2rem;
+    gap: 2rem;
+    @include responsive(md) {
+      flex-direction: column;
+      align-items: center;
+      padding: 4.8rem auto 5.2rem;
+    }
   }
   &__circle {
     background-color: white;
@@ -602,165 +608,155 @@ main {
 }
 
 .value {
-  background: url("../public/img/specialdetail.jpg") no-repeat center center;
+  background: url("../public/img/specialdetail.jpg") no-repeat center;
   background-size: cover;
+  color: white;
+  padding-top: 6rem;
   .container {
-    color: #fff;
-    text-align: center;
-    letter-spacing: 0.1em;
-    line-height: 1.6em;
-    .institute {
-      padding: 1em 0 0.5em;
+    @include flex-center();
+    flex-direction: column;
+  }
+  .section_title{
+    &::before, &::after {
+      --color-primary: white;
     }
-    .block {
-      padding: 1em 0 2em;
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-    .section_title{
-      &::before,
-      &::after {
-        --color_seccondary: white;
-      }
-      padding: 0.5em 0;
-      margin-bottom: 0;
-    }
+    padding: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  &__title {
+    margin-bottom: 2.4rem;
+  }
+  &__explanation {
+    margin-bottom: 4rem;
   }
 }
 
 .message {
+  padding-top: 6rem;
   .container{
-    text-align: center;
-    padding: 0 10em;
-    .strong {
-      padding: 2em;
-      font-size: 1.3em;
-      letter-spacing: 0.1em;
+    @include flex-center();
+    flex-direction: column;
+  }
+  &__title {
+    margin-bottom: 4rem;
+  }
+  &__explanation {
+    font-weight: 700;
+    margin-bottom: 4rem;
+  }
+  &__spread {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 3rem;
+    width: 75%;
+    margin-bottom: 5rem;
+    img {
+      width: 100%;
     }
-    &_spread {
-      display: flex;
-      gap: 2em;
-      letter-spacing: 0.1em;
-      img {
-        height: 9em;
-      }
+  }
+  &__content {
+    text-align: left;
+    font-weight: 400;
+    &__sentence {
+      margin-bottom: 1rem;
     }
-    &_content {
-      text-align: left;
-      p {
-        font-size: 0.9em;
-        line-height: 1.3em;
-        padding-top: 0.5em;
-      }
-      .block {
-        padding: 1.5em 0;
-        p {
-          padding: 0;
-        }
-      }
-    }
+  }
+  &__block {
+    margin: 3rem auto;
   }
 }
 
 .callcenter {
-  background-color: #ebb94d;
+  background-color: var(--color-primary);
+  padding-top: 6rem;
   .container {
-    text-align: center;
-    padding: 1em 0;
-    letter-spacing: 0.1em;
-    .strong {
-      padding: 1.5em 0;
-    }
-    .button-md {
-      margin-top: 1em;
-    }
+    @include flex-center();
+    flex-direction: column;
+  }
+  &__title {
+    margin-bottom: 2.4rem;
+  }
+  &__explanation {
+    margin-bottom: 6rem;
+  }
+  &__link {
+    margin-bottom: 2rem;
   }
 }
 
 .common_question {
+  padding: 6rem 0;
   .container {
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 0.1em;
-    padding-bottom: 3em;
-    h2 {
-      padding: 1em 0;
-    }
-    details {
-      text-align: left;
-      border-bottom: 1px solid #ebebeb;
-      summary {
-        position: relative;
-        list-style: none;
-        cursor: pointer;
-        font-size: 1.2em;
-        padding: 1em;
-        border: 1px solid #ebebeb;
-        margin:0.2em auto 0;
-        &::after {
-          display: block;
-          content: "";
-          position: absolute;
-          border-top: solid 6px #ebebeb;
-          border-left: solid 6px #ebebeb;
-          width: 0.5em;
-          height: 0.5em;
-          transform: rotate(225deg);
-          top: 1em;
-          right: 1em;
-        }
-        &:hover{ 
-          p {
-            text-decoration: underline;
-          }
-        }
+    @include flex-center();
+    flex-direction: column;
+  }
+  &__title {
+    margin-bottom: 4rem;
+  }
+  details {
+    text-align: left;
+    border-bottom: 1px solid #ebebeb;
+    width: 100%;
+    margin-bottom: 0.4rem;
+    summary {
+      position: relative;
+      list-style: none;
+      cursor: pointer;
+      border: 1px solid #ebebeb;
+      padding: 1.6rem 2rem;
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        border-top: solid 6px #ebebeb;
+        border-left: solid 6px #ebebeb;
+        width: 1rem;
+        height: 1rem;
+        transform: rotate(225deg);
+        top: 2rem;
+        right: 2.4rem;
+      }
+      &:hover{ 
         p {
-          display: inline-block;
+          text-decoration: underline;
         }
       }
-      &[open]{
-        summary::after{
-          transform: rotate(45deg);
-        }
-        .container_answer {
-          max-height: 5em;
-          padding: 1.5em 1.5em 2em;
-        }
+      p {
+        display: inline-block;
       }
     }
-    &_answer{
-      padding: 0em;
-      max-height: 0em;
-      transition: max-height .5s, padding .5s;
+    &[open]{
+      summary::after{
+        transform: rotate(45deg);
+      }
+      .container_answer {
+        max-height: 5em;
+        padding: 1.5em 1.5em 2em;
+      }
     }
+  }
+  &__answer{
+    padding: 2rem 1.6rem 3rem;
+    transition: max-height .5s, padding .5s;
   }
 }
 
 footer {
   background-color: #ebebeb;
-  padding: 2em;
+  padding: 4rem 0 2.4rem;
   .container{
-    display: flex;
+    @include flex-center();
     flex-direction: column;
-    letter-spacing: 0.1em;
-    p {
-      font-size: 0.6em;
-    }
-    a {
-      color: var(--color-secondary);
-    }
-    .cta_sns {
-      padding: 0 0 2em;
-      &_facebook{
-        color: #FFF;
-      }
-    }
   }
-}
-
-.strong {
-  font-weight: bold;
-  font-size: 1.1em;
+  a {
+    color: var(--color-secondary);
+  }
+  .cta_sns {
+    &_facebook{
+      color: white;
+    }
+    margin:1rem auto 3.6rem;
+  }
 }
 
 .white {

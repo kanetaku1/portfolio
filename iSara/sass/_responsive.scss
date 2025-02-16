@@ -3,6 +3,9 @@
   @if($size == lg){
     $with: 1200px;
   }
+  @if($size == md){
+    $with: 992px;
+  }
   @if($size == sm){
     $with: 768px;
   }
