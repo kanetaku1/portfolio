@@ -1,3 +1,5 @@
+@use "responsive" as *;
+
 .circle {
   display: inline-block;
   padding: 4rem;
@@ -5,11 +7,18 @@
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
+  @include responsive(sm) {
+    padding: 3rem;
+  }
   p {
     position: absolute;
     transform: translate(-50%, -50%);
     top: 4rem;
     left: 4rem;
+    @include responsive(sm) {
+      top: 3rem;
+      left: 3rem;
+    }
   }
   &-about {
     @extend .circle;
@@ -19,7 +28,6 @@
   }
   &-question {
     @extend .circle;
-    top: 8.4rem;
     color: #ebb94d;
     background-color: white;
   }

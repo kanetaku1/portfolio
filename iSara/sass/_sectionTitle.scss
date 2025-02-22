@@ -7,8 +7,7 @@
   max-width: calc(var(--max-width) - 30%);
   padding: 3.6rem 0 2.8rem;
   margin-bottom: 3.6rem;
-  &::before,
-  &::after {
+  &::before, &::after {
     position: absolute;
     content: "";
     display: block;
@@ -16,6 +15,10 @@
     height: 4.8rem;
     top: 0;
     left: 0;
+    @include responsive(sm) {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
   }
   &::before {
     border-top: 4px solid var(--color-primary);

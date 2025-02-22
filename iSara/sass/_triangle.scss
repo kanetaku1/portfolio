@@ -1,3 +1,5 @@
+@use "responsive" as *;
+
 .triangle {
   position: absolute;
   background-color: #ebb94d;
@@ -7,4 +9,8 @@
   left: 50%;
   transform: translate(-50%, 0);
   clip-path: polygon(0 0, 50% 100%, 100% 0);
+  @include responsive(sm) {
+    height: 1.8rem;
+    width: 3.6rem;
+  }
 }

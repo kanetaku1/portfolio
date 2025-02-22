@@ -7,11 +7,13 @@
 @use "font" as *;
 @use "triangle" as *;
 @use "underline" as *;
+@use "accordion" as *;
 
 :root {
   --color-primary: #ebb94d;
   --color-secondary: #016ea9;
   --color-basic: #333333;
+  --color-gray: #ebebeb;
   --max-width: 1200px;
 }
 
@@ -37,13 +39,17 @@ a {
   text-decoration: none;
 }
 
-@include responsive(sm) {
-  .br {
+.br {
+  display: none;
+  @include responsive(sm) {
     display: block;
     line-height: 2.4rem;
   }
-  .pc {
-    display: none;
+}
+.pc {
+  display: block;
+  @include responsive(sm) {
+    display: none; 
   }
 }
 
@@ -53,6 +59,9 @@ a {
   letter-spacing: 0.15rem;
   padding: 0 1.6rem;
   margin: 0 auto;
+  @include responsive(sm) {
+    padding: 0 1rem;
+  }
 }
 
 .header {
@@ -208,8 +217,7 @@ main {
       height: 1rem;
       background-color: var(--color-primary);
       position: absolute;
-      inset: auto auto 0.4rem 0;
-      top: 2rem;
+      inset: auto 0 0;
       z-index: -1;
     }
   }
@@ -268,12 +276,21 @@ main {
   }
   &_sentence {
     margin-bottom: 1.6rem;
+    @include responsive(sm) {
+      font-size: 1.3rem;
+      line-height: 1.9rem;
+      margin-bottom: 1rem;
+    }
   }
   &_num {
     padding: 0.3rem;
     border-radius: 5px;
     background-color: var(--color-primary);
     color: white;
+    @include responsive(sm) {
+      padding: 0;
+      margin: 0 10%;
+    }
   }
   ul {
     @include flex-center();
@@ -297,12 +314,27 @@ main {
     p:first-child, p:nth-child(2) {
       margin-bottom: 2.4rem;
     }
+    @include responsive(sm) {
+      padding: 1.6rem 0;
+      p:first-child {
+        margin-bottom: 1.5rem;
+      }
+      p:nth-child(2) {
+        margin-bottom: 0.5rem;
+      }
+    }
   }
 }
 
 .blue {
   background-color: var(--color-secondary);
   color: white;
+  @include responsive(sm) {
+    padding: 2rem 0;
+    p {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 .learn {
@@ -336,6 +368,9 @@ main {
 .merit {
   background-color: #FEF5E0;
   padding-bottom: 5.2rem;
+  @include responsive(lg) {
+    padding-bottom: 4rem;
+  }
   .container {
     @include flex-center();
     flex-direction: column;
@@ -345,29 +380,75 @@ main {
   }
   ul {
     display: flex;
+    @include responsive(lg) {
+      width: 95%;
+      justify-content: space-between;
+    }
+    @include responsive(md) {
+      flex-direction: column;
+      gap: 3rem;
+    }
     li {
       margin: 0rem 1.6rem;
       width: 100%;
-      text-align: left;
-      img {
-        height: 18rem;
-        width: 100%;
-        margin-bottom: 1.2rem;
+      @include responsive(lg) {
+        margin: 0rem;
       }
     }
   }
-  &_item {
+  img {
+    height: 18rem;
+    width: 100%;
+    object-fit: cover;
     margin-bottom: 1.2rem;
+    @include responsive(lg) {
+      width: 30rem;
+    }
+    @include responsive(sm) {
+      height: 12rem;
+      width: 100%;
+    }
   }
-  &_plus {
+  &__item {
+    text-align: left;
+    margin-bottom: 1.2rem;
+    @include responsive(lg) {
+      text-align: center;
+    }
+  }
+  &__explain {
+    text-align: left;
+    @include responsive(lg) {
+      margin: 0 4rem;
+    }
+    @include responsive(sm) {
+      margin: 0 2rem;
+    }
+  }
+  &__plus {
     background-color: white;
     border: 2px solid #ebb94d;
     border-radius: 5px;
     width: 100%;
-    margin: 4.8rem auto;
+    margin: 4.8rem auto 4rem;
     padding: 3rem;
     p {
       margin-bottom: 1.4rem;
+    }
+    @include responsive(lg) {
+      width: 90%;
+      margin-top: 6.4rem;
+    }
+    @include responsive(sm) {
+      margin: 3.2rem auto 1.6rem;
+      width: 100%;
+      padding: 1rem 1rem 2rem;
+      p:last-child {
+        margin-bottom: 0;
+        font-size: 1rem;
+        letter-spacing: normal;
+        line-height: 1.4rem;
+      }
     }
   }
 }
@@ -387,6 +468,18 @@ main {
     display: flex;
     gap: 3.2rem;
     margin-top: 21rem;
+    @include responsive(lg) {
+      width: 90%;
+    }
+    @include responsive(md) {
+      flex-direction: column;
+      gap: 20rem;
+    }
+    @include responsive(sm) {
+      width: 100%;
+      gap: 12rem;
+      margin-top: 12rem;
+    }
     li{
       flex: 1;
       position: relative;
@@ -396,12 +489,21 @@ main {
         border-radius: 50%;
         top: 4rem;
         height: 20rem;
+        @include responsive(sm) {
+          height: 12rem;
+        }
       }
     }
   }
   &__portfolio {
     border: 3px solid white;
-    padding: 4rem 4rem 7.4rem;
+    padding: 4.8rem 4rem 7.4rem;
+    @include responsive(lg) {
+      padding-bottom: 4rem;
+    }
+    @include responsive(sm) {
+      padding: 4.8rem 1rem 2rem;
+    }
   }
   &__name {
     margin: 1rem 0;
@@ -414,15 +516,27 @@ main {
 .Question {
   position: relative;
   padding-top: 12rem;
+  background-color: #ebb94d;
+  color: white;
+  @include responsive(sm) {
+    padding-top: 9rem;
+    padding-bottom: 2rem;
+  }
+  .circle-question {
+    top: 8.4rem;
+    @include responsive(sm) {
+      top: 5.4rem;
+    }
+  }
   .container {
     @include flex-center();
   }
-  background-color: #ebb94d;
-  color: white;
   .section_title {
     &::before, &::after {
       --color-primary: white;
+      padding: 0;
     }
+    padding: 1.6rem;
     margin-bottom: 0;
   }
 }
@@ -442,21 +556,32 @@ main {
   ul {
     color: #777777;
     width: 70%;
-    li {
-      display: flex;
-      text-align: left;
-      flex-grow: 3 7;
+    @include responsive(lg) {
+      width: 90%;
+    }
+    @include responsive(sm) {
       width: 100%;
+    }
+    li {
+      display: grid;
+      text-align: left;
+      grid-template-columns: 3fr 7fr;
       margin-bottom: 4rem;
+      gap: 2rem;
       img{
-        width: 30%;
-        margin: 0 3rem;
+        width: 100%;
         border: 3px solid #ebb94d;
       }
+    }
+    li:last-child {
+      margin-bottom: 0rem;
     }
   }
   &__opinion {
     margin: 1.6rem 0 1rem;
+    @include responsive(sm) {
+      margin: 0rem;
+    }
   }
 }
     
@@ -469,14 +594,26 @@ main {
     flex-direction: column;
   }
   &__header{
-    padding-top: 10px;
+    padding-top: 1rem;
+    margin-bottom: 1.6rem;
   }
   ul{
     display: flex;
     width: 100%;
     padding: 0 15%;
-    margin: 3rem 0;
+    margin: 5rem auto;
     gap: 3rem;
+    @include responsive(lg) {
+      width: 90%;
+    }
+    @include responsive(md) {
+      flex-direction: column;
+    }
+    @include responsive(sm) {
+      width: 100%;
+      padding: 0;
+      margin: 3rem auto 0;
+    }
     li{
       background-color: var(--color-secondary);
       border-radius: 5px;
@@ -504,36 +641,78 @@ main {
 }
 
 .flow {
+  .container {
+    @include flex-center();
+    flex-direction: column;
+  }
+  &__header {
+    margin-bottom: 5rem;
+  }
   &_img {
-    margin: 5rem auto 4rem;
+    margin-bottom: 4rem;
     height: 16rem;
     @include responsive(lg) {
       height: 90%;
       width: 90%;
     }
   }
-  li {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    justify-content: center;
-    background-color: #fef5e0;
-    padding: 3rem 4rem;
-    border-radius: 10px;
-    gap: 2rem;
+  ul {
+    @include responsive(lg) {
+      width: 90%;
+    }
+    @include responsive(sm) {
+      width: 100%;
+    }
+    li {
+      display: grid;
+      grid-template-columns: 18rem 1fr;
+      justify-content: center;
+      background-color: #fef5e0;
+      padding: 3rem 4rem;
+      border-radius: 10px;
+      gap: 2rem;
+    }
   }
   &__step {
     align-self: flex-end;
     img {
       margin-bottom: 2rem;
+      @include responsive(sm) {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin: 1rem 2rem;
+      }
     }
   }
   &__sentence{
     text-align: left;
     flex-shrink: 1;
     p {
-      padding-top: 2rem;
+      margin-top: 2rem;
+    }
+    @include responsive(sm) {
+      padding: 0rem 2rem 2rem;
+      p {
+        margin-top: 1rem;
+      }
     }
   }
+  &__connection {
+    margin: 0 auto;
+    width: 70%;
+  }
+  @include responsive(sm) {
+    details {
+      background-color: #fef5e0;
+      margin-bottom: 0.4rem;
+      summary {
+        display: flex;
+        align-items: center;
+        --color-gray: black;
+      }
+    }
+  }
+    
 }
 
 .why-bangkok {
@@ -694,50 +873,17 @@ main {
     margin-bottom: 4rem;
   }
   details {
-    text-align: left;
     border-bottom: 1px solid #ebebeb;
-    width: 100%;
     margin-bottom: 0.4rem;
     summary {
-      position: relative;
-      list-style: none;
-      cursor: pointer;
-      border: 1px solid #ebebeb;
       padding: 1.6rem 2rem;
-      &::after {
-        display: block;
-        content: "";
-        position: absolute;
-        border-top: solid 6px #ebebeb;
-        border-left: solid 6px #ebebeb;
-        width: 1rem;
-        height: 1rem;
-        transform: rotate(225deg);
-        top: 2rem;
-        right: 2.4rem;
-      }
-      &:hover{ 
-        p {
-          text-decoration: underline;
-        }
-      }
-      p {
-        display: inline-block;
+      border: 1px solid var(--color-gray);
+    }
+    &[open] {
+      .details__content{
+        padding: 2rem 1.6rem 3rem;
       }
     }
-    &[open]{
-      summary::after{
-        transform: rotate(45deg);
-      }
-      .container_answer {
-        max-height: 5em;
-        padding: 1.5em 1.5em 2em;
-      }
-    }
-  }
-  &__answer{
-    padding: 2rem 1.6rem 3rem;
-    transition: max-height .5s, padding .5s;
   }
 }
 

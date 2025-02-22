@@ -1,0 +1,57 @@
+@use "responsive" as *;
+
+details {
+  text-align: left;
+  width: 100%;
+  summary {
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      border-top: solid 7px var(--color-gray);
+      border-left: solid 7px var(--color-gray);
+      width: 8px;
+      height: 8px;
+      transform: rotate(225deg);
+      top: 2rem;
+      right: 2.4rem;
+      @include responsive(lg) {
+        border-top: solid 5px var(--color-gray);
+        border-left: solid 5px var(--color-gray);
+        width: 6px;
+        height: 6px;
+      }
+    }
+    &:hover{ 
+      p {
+        text-decoration: underline;
+      }
+    }
+    p {
+      display: inline-block;
+    }
+  }
+  &[open]{
+    summary::after{
+      transform: rotate(45deg);
+    }
+    .details__content {
+      animation: fadeIn 0.5s ease;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* 透明 */
+    transform: translateY(-10px); /* 上から表示 */
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
