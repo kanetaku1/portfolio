@@ -149,11 +149,23 @@ $font-weight: 0;
       font-size: 1.5rem;
     }
   }
+  &__prize {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    @include responsive(lg) {
+      font-size: 1.2rem;
+    }
+  }
   &__footer {
     font-size: 1rem;
     line-height: 1.4rem;
   }
   &__stick-md {
     font-size: 2.4rem;
+    font-weight: 300;
+    @include responsive(sm) {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
   }
 }
