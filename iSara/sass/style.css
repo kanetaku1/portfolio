@@ -1437,6 +1437,22 @@ main .blank {
   border-radius: 50%;
   position: relative;
 }
+.prize__circle__column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+.prize__circle__left {
+  background-color: white;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  align-items: center;
+}
+.prize__circle__right {
+  color: white;
+}
 .prize__num {
   position: absolute;
   transform: translate(-50%, -50%);

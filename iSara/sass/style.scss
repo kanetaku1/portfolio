@@ -796,6 +796,22 @@ main {
     width: 25rem;
     border-radius: 50%;
     position: relative;
+    &__column {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      gap: 2rem;
+    }
+    &__left {
+      background-color: white;
+      height: 6rem;
+      width: 6rem;
+      border-radius: 50%;
+      align-items: center;
+    }
+    &__right {
+      color: white;
+    }
   }
   &__num {
     position: absolute;
