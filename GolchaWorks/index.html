@@ -28,7 +28,7 @@
     <header class="header">
       <div class="container">
         <h1 class="header-logo">
-          <a href=".">GOLCHA WORKS</a>
+          <a href="#top">GOLCHA WORKS</a>
         </h1>
         <nav class="gnav">
           <ul class="gnav-list">
@@ -63,19 +63,19 @@
         <div class="container">
           <h2 class="title">WORKS</h2>
           <div class="works-list">
-            <a class="works-item" href="../bicycle/index.html">
+            <a class="works-item" href="/bicycle/">
               <div class="works-img"><img src="img/mainvisual.jpg" alt="" /></div>
               <p class="works-name">自転車</p>
               <p class="works-info">Imitate web page/ Coding(html5)</p>
               <p class="works-state">100%</p>
             </a>
-            <a class="works-item" href="../iSara/index.html">
+            <a class="works-item" href="/iSara/">
               <div class="works-img"><img src="img/IMG_1139-768x576.jpg" alt="" /></div>
               <p class="works-name">iSara</p>
               <p class="works-info">Imitate web page/ Coding(html5)</p>
               <p class="works-state">80%</p>
             </a>
-            <a class="works-item" href="../gym/index.html">
+            <a class="works-item" href="/gym/">
               <div class="works-img"><img src="img/gym.JPG" alt="" /></div>
               <p class="works-name">How to Use the Strength Training Room</p>
               <p class="works-info">Make web page/ Coding(html5)</p>
@@ -175,28 +175,5 @@
     <!-- /footer -->
 
   </div>
-
-  <script>
-    // WordPressのAPIからブログ記事を取得
-    $(document).ready(function() {
-      const blogList = $('#blog-list');
-      const apiUrl = 'http://golcha.starfree.jp/gollog/wp-json/wp/v2/posts?per_page=3'; // 最新3件を取得
-
-      $.get(apiUrl, function(posts) {
-        posts.forEach(function(post) {
-          const postDate = new Date(post.date).toLocaleDateString();
-          const postExcerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '').substring(0, 100) + '...';
-
-          blogList.append(`
-            <a class="blog-item" style="color: black;" href="${post.link}" target="_blank">
-              <p class="blog-name" style="font-size: 1.5em; font-weight: bold; padding: 0.8em 0 0.4em;">${post.title.rendered}</p>
-              <p class="blog-info">${postDate}｜カテゴリ：${post.categories.join(', ')}</p>
-              <p class="blog-excerpt">${postExcerpt}</p>
-            </a>
-          `);
-        });
-      });
-    });
-  </script>
 </body>
 </html>
